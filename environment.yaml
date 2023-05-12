@@ -5,7 +5,11 @@ channels:
 dependencies:
   - snakemake-minimal >=5.24.1
   - geNomad >=1.5.0
-  - mmseqs2 >=14.7e284
+  - mmseqs2 >=13.45111
   - checkv >=1.0.1
-  - pandas >=2.0.0
-  - numpy >=1.24.2
+  - blast >=2.6.0
+  - prokka =1.11
+  - pandas
+  - bedtools =2.27.1
+  - trnascan-se >= 2.0.2
+##  - cmscan 1.1.2
