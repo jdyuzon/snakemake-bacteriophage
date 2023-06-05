@@ -1,11 +1,10 @@
 #!/bin/bash
-#SBATCH --account m342
-#SBATCH --qos debug
-#SBATCH --nodes 2
+#SBATCH --qos regular
+#SBATCH --nodes 1
 #SBATCH --constraint cpu
 #SBATCH --ntasks-per-node=128
 #SBATCH --cpus-per-task=2
-#SBATCH -t 00:30:00
+#SBATCH -t 04:00:00
 #SBATCH -J snakemake-bacteriophage
 
 
