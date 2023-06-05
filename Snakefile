@@ -78,6 +78,8 @@ rule mmseqs:
 	output:
 		fa="mmseqs_target_seq/{sample}/{sample}_virus_proteins.faa",
 		file="mmseqs_target_seq/{sample}/{sample}_virus_proteins.target_seq"
+	conda:
+		"bin/mmseqs2.yaml"
 	shell:
 		"""
 		cp {input} {output.fa} 
@@ -94,6 +96,8 @@ rule phrog:
 	params:
 		tmp="mmseqs_target_seq/{sample}/tmp",
 		tsv="mmseqs_target_seq/{sample}_virus_proteins_mmseqs.tsv"
+	conda:
+		"bin/mmseqs2.yaml"
 	shell:
 		"""
 		mmseqs search {input.phrog_db} {input.target} {output.mmseqs} {params.tmp} -s 7
@@ -208,6 +212,3 @@ checkpoint filter_plasmid_genes:
 		plasmid_low=plasmid.loc[pd.to_numeric(plasmid['plasmid_score'])<0.95]
 		plasmid_high.to_csv(output.high,sep='\t')
 		plasmid_low.to_csv(output.low,sep='\t')
-
-#rule get_fastas
-
