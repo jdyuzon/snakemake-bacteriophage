@@ -27,6 +27,7 @@ conda env create --name snakemake-bacteriophage --file environment.yaml
 less config.yaml
 ```
 For example the config file looks like:
+
 samples:
      Agrobacterium_tumefaciens_12D1_IMG_2846775462: Agrobacterium_tumefaciens_12D1_IMG_2846775462
      Bradyrhizobium_japonicum_USDA-110_IMG_637000038: Bradyrhizobium_japonicum_USDA-110_IMG_637000038
